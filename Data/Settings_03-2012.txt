@@ -1,0 +1,22 @@
+
+
+--OLD---
+  <MskHourStringPattern>	\*{5,}\s-\s\*{5,}					</MskHourStringPattern>
+  <MskHourTimePattern>		^\d{2}(?=(:\d{2}){2})				</MskHourTimePattern>
+  <MskSongStringPattern>	(?&lt;=[0-9,:,\s])Z[A-Z,\d]{3}-\d{2}(?=\.wav)</MskSongStringPattern>
+  <MskSongZcodePattern>		Z[A-Z,\d]{3}-\d{2}(?=\s)			</MskSongZcodePattern>
+  
+  		Artist Name = 		(?<=Z[A-Z,\d]{3}-\d{2}\.wav\s).*(?=\t)
+		Song Name = 		(?<=Z[A-Z,\\d]{3}-\\d{2}\\.wav\\s.*\\t).*
+--OLD---
+
+--NEW---
+  <MskHourStringPattern>	RR\s+\d+:\d+						</MskHourStringPattern>
+  <MskHourTimePattern>		(?<=RR\s+)\d{1,2}(?=:\d{2}\s+)		</MskHourTimePattern>
+  <MskSongStringPattern>	Z[A-Z,\d]{3}-\d{2}(?=\s)			</MskSongStringPattern>
+  <MskSongZcodePattern>		Z[A-Z,\d]{3}-\d{2}(?=\s)			</MskSongZcodePattern>
+    
+		Artist Name = 		(?<=Z[A-Z,\d]{3}-\d{2}.{11}).{18}
+		Song Name = 		(?<=Z[A-Z,\d]{3}-\d{2}.{29}).{18}
+--NEW---
+
