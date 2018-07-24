@@ -1,2 +1,2 @@
 
-Copyright (C) 2018 
+Copyright Oleg Baidin (C) 2018 
